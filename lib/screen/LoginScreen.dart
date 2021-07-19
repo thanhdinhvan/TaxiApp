@@ -36,8 +36,8 @@ class _LoginScreenState extends State<LoginScreen>
     return Scaffold(
       body: GestureDetector(
         onTap: () {
-            FocusScope.of(context).unfocus();
-          },
+          FocusScope.of(context).unfocus();
+        },
         child: Container(
           padding: EdgeInsets.fromLTRB(30, 70, 30, 0),
           constraints: BoxConstraints.expand(),
@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen>
                       padding: const EdgeInsets.fromLTRB(3, 0, 0, 0),
                       child: TextField(
                           decoration: InputDecoration(
-                            contentPadding: EdgeInsets.all(10.0),
+                              contentPadding: EdgeInsets.all(10.0),
                               labelText: "User Name",
                               labelStyle: TextStyle(
                                   color: Color(0xff888888), fontSize: 15))),
@@ -102,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen>
                           TextField(
                               obscureText: !_showPass,
                               decoration: InputDecoration(
-                                contentPadding: EdgeInsets.all(10.0),
+                                  contentPadding: EdgeInsets.all(10.0),
                                   labelText: "PASWWORD",
                                   labelStyle: TextStyle(
                                       color: Color(0xff888888), fontSize: 15)),
@@ -132,42 +132,60 @@ class _LoginScreenState extends State<LoginScreen>
                   ),
                 ),
                 Container(
-                  constraints:  boxConstraints,
+                  constraints: boxConstraints,
                   alignment: AlignmentDirectional.centerEnd,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 15, 15, 0),
-                    child: Text("Forgot password?", style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 17,),),
+                    child: Text(
+                      "Forgot password?",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 17,
+                      ),
+                    ),
                   ),
                 ),
-                 Padding(
-                    padding: EdgeInsets.fromLTRB(0, 35, 0, 0),
-                    child: SizedBox(
-                      width: double.infinity,
-                      height: 50,
-                      child: RaisedButton(child: Text("Log in", style: TextStyle(color: Colors.white, fontSize: 18),),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, 35, 0, 0),
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: 50,
+                    child: RaisedButton(
+                      child: Text(
+                        "Log in",
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
                       onPressed: () {
                         print("object");
                       },
                       color: Colors.blue,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all( Radius.circular(6))),
-                      ),
-                      
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(6))),
                     ),
-                    
                   ),
-                  RichText(text: TextSpan(
-                    text: "New user?",
-                    style:  TextStyle(color: Colors.black26, fontSize: 16),
-                    children: [TextSpan(
-                      text: "Sign up for a new acccount",
-                      recognizer:  TapGestureRecognizer()..onTap = (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterScreen()));
-                      }
-                    )]
-                  ),)
-                  
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  child: RichText(
+                    text: TextSpan(
+                        text: "New user?",
+                        style: TextStyle(color: Colors.black26, fontSize: 16),
+                        children: [
+                          TextSpan(
+                              text: "  Sign up for a new acccount",
+                              style:
+                                  TextStyle(color: Colors.blue, fontSize: 16),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              RegisterScreen()));
+                                })
+                        ]),
+                  ),
+                )
               ],
             ),
           ),
