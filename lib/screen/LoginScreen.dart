@@ -39,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen>
             FocusScope.of(context).unfocus();
           },
         child: Container(
-          padding: EdgeInsets.fromLTRB(30, 70, 30, 0),
+          padding: EdgeInsets.fromLTRB(30, 100, 30, 0),
           constraints: BoxConstraints.expand(),
           color: Colors.white,
           child: SingleChildScrollView(
@@ -92,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen>
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
                   child: Container(
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(3, 3, 3, 0),
@@ -157,16 +157,20 @@ class _LoginScreenState extends State<LoginScreen>
                     ),
                     
                   ),
-                  RichText(text: TextSpan(
-                    text: "New user?",
-                    style:  TextStyle(color: Colors.black26, fontSize: 16),
-                    children: [TextSpan(
-                      text: "Sign up for a new acccount",
-                      recognizer:  TapGestureRecognizer()..onTap = (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterScreen()));
-                      }
-                    )]
-                  ),)
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
+                    child: RichText(text: TextSpan(
+                      text: "New user?",
+                      style:  TextStyle(color: Colors.black26, fontSize: 16),
+                      children: [TextSpan(
+                        text: "Sign up for a new acccount",
+                        style: TextStyle(color: Colors.blue, fontSize: 16),
+                        recognizer:  TapGestureRecognizer()..onTap = (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterScreen()));
+                        }
+                      )]
+                    ),),
+                  )
                   
               ],
             ),
